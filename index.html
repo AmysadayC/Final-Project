@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nature Typing Speed Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Nature Typing Speed Test</h1>
+        
+        <div class="stats">
+            <div class="stat">
+                <span>Time: </span>
+                <span id="timer">60</span>
+            </div>
+            <div class="stat">
+                <span>WPM: </span>
+                <span id="wpm">0</span>
+            </div>
+            <div class="stat">
+                <span>Accuracy: </span>
+                <span id="accuracy">100%</span>
+            </div>
+        </div>
+
+        <div class="text-display" id="textDisplay">
+            Click Start to begin!
+        </div>
+
+        <textarea id="userInput" placeholder="Type the text above here..." disabled></textarea>
+
+        <div class="controls">
+            <button id="startBtn">Start Game</button>
+            <button id="resetBtn">Reset</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
