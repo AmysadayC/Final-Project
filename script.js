@@ -35,6 +35,7 @@ displaySentence();
 let startBtn = document.getElementById("startBtn");
 let userInput = document.getElementById("userInput");
 let timerDisplay = document.getElementById("timer");
+let gameTimer = null;
 
 let gameActive = false;
 let timeLeft = 60;
@@ -62,23 +63,29 @@ function startGame() {
     startTimer();
 }
 
-// Function to handle the countdown timer
+// Function to start the timer.
 function startTimer() {
-    let timer = setInterval(function() {
+gameTimer = setInterval(function() { // calls the function at a specific part
         timeLeft = timeLeft - 1;
         timerDisplay.innerText = timeLeft;
         
-        // When time runs out
-        if (timeLeft <= 0) {
-            clearInterval(timer);
+        // When the timer runs out 
+        if (timeLeft <= 0) { //restarts to 0 if the timer is less than or equal to the
+            clearInterval(gameTimer);
             endGame();
         }
-    }, 1000);
+    }, 1000); // Sets up the interval to update the counter every 1000 milliseconds which is every 1 second.
 }
 
 // Function to end the game
 function endGame() {
     gameActive = false;
+
+    if (gameTimer) {
+        clearInterval(gameTimer);
+        gameTimer = null;
+    }
+
     userInput.disabled = true;
     
     // Calculate final results
@@ -103,6 +110,7 @@ function endGame() {
 
 // Add click event to start button
 startBtn.addEventListener("click", startGame);
+resetBtn.addEventListener("click", resetGame);
 
 // Function to check user progress and highlight mistakes
 function checkUserInput() {
@@ -137,12 +145,20 @@ function checkUserInput() {
         endGame();
     }
 }
-
 // Add event listener to track typing
 userInput.addEventListener("input", checkUserInput);
+
 // Function to reset the game
 function resetGame() {
+    console.log("reset game");
     gameActive = false;
+    
+    // Stop any running timer
+    if (gameTimer) {
+        clearInterval(gameTimer);
+        gameTimer = null;
+    }
+    
     timeLeft = 60;
     
     // Reset display elements
@@ -156,6 +172,9 @@ function resetGame() {
     userInput.disabled = true;
     userInput.value = "";
     
-    // Display a new random sentence
-    displaySentence();
+    // Keep the same sentence but reset its display
+    let textDisplay = document.getElementById("textDisplay");
+    textDisplay.innerText = currentSentence;
+    textDisplay.style.color = "#888"; // Resets to faded color
+
 }

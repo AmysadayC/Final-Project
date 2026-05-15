@@ -1,8 +1,9 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-    background-color: #223622;
+    background-image: url('Nature background.jpg');
+    background-position: center;
+    background-size: cover;
+    padding: 150px;
 }
 
 .game-container {
@@ -16,7 +17,7 @@ body {
 
 h1 {
     text-align: center;
-    color: #2d5a2d;
+    color: #6a836a;
     margin-bottom: 30px;
 }
 
@@ -25,26 +26,26 @@ h1 {
     justify-content: space-around;
     margin-bottom: 30px;
     padding: 15px;
-    background-color: #e8f5e8;
+    background-color: #acb9ac;
     border-radius: 5px;
 }
 
 .stat {
     font-size: 18px;
     font-weight: bold;
-    color: #2d5a2d;
+    color: #526451;
 }
 
 .text-display {
-    background-color: #f9f9f9;
+    background-color: #ffffff;
     padding: 20px;
-    border: 2px solid #ddd;
+    border: 2px solid #adadad;
     border-radius: 5px;
     font-size: 18px;
     line-height: 1.6;
     margin-bottom: 20px;
     min-height: 100px;
-    color: #888; /* Faded gray color */
+    color: #818181; /* Faded gray color */
     font-style: italic; /* Makes it look more like a guide */
 }
 
@@ -54,7 +55,7 @@ h1 {
     height: 100px;
     padding: 14.5px;
     font-size: 16px;
-    border: 2px solid #ddd;
+    border: 2px solid #989898;
     border-radius: 7px;
     resize: none;
     margin-bottom: 20px;
@@ -65,8 +66,8 @@ h1 {
 }
 
 button {
-    background-color: #4a7c4a;
-    color: white;
+    background-color: #c47a7a;
+    color: rgb(115, 47, 47);
     border: none;
     padding: 12px 25px;
     font-size: 16px;
@@ -76,10 +77,13 @@ button {
 }
 
 button:hover {
-    background-color: #3a6b3a;
+    background-color: #274f33;
+    color: rgb(21, 255, 0);
 }
 
 button:disabled {
-    background-color: #ccc;
+    background-color: #727272;
     cursor: not-allowed;
+    color: rgb(0, 0, 0);
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
